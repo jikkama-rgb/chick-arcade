@@ -641,7 +641,7 @@ async function makeCard(i){
   lines.forEach((l, k) => x.fillText(l, Wd/2, 1120 + k*90 - (lines.length-1)*45));
   const d = new Date(); x.fillStyle = "#9a90b8"; x.font = F(400,32);
   x.fillText(`${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,"0")}.${String(d.getDate()).padStart(2,"0")} 집게로 뽑은 오늘의 카드`, Wd/2, 1440);
-  x.fillText("병아리 상점가", Wd/2, 1496);
+  x.fillText("병아리 상점가 · @piyo.ai.shop", Wd/2, 1496);
   // owner chick small at bottom right
   OWNER.forEach((r, ry) => { for (let rx = 0; rx < 16; rx++){ const k = r[rx]; if (k === ".") continue; x.fillStyle = CP[k]; x.fillRect(808 + rx*8, 1502 + ry*8, 8, 8); } });
   return c;
@@ -676,7 +676,7 @@ async function makeHonor(){
   OWNER.forEach((r, ry) => { for (let rx = 0; rx < 16; rx++){ const k = r[rx]; if (k === ".") continue; x.fillStyle = CP[k]; x.fillRect(ox + rx*8, oy + ry*8, 8, 8); } });
   x.fillStyle = "#ffcf33"; x.fillRect(ox+32, oy-24, 64, 24); x.fillRect(ox+32, oy-40, 8, 16); x.fillRect(ox+56, oy-48, 16, 24); x.fillRect(ox+88, oy-40, 8, 16);
   x.fillStyle = "#ff5fb0"; x.fillRect(ox+56, oy-16, 16, 8);
-  x.fillStyle = "#9a90b8"; x.font = F(400,30); x.fillText("병아리 상점가", Wd/2, 1700);
+  x.fillStyle = "#9a90b8"; x.font = F(400,30); x.fillText("병아리 상점가 · @piyo.ai.shop", Wd/2, 1700);
   return c;
 }
 $("dmSave").addEventListener("click", async () => { SFX.chime(); await saveCanvas(await makeHonor(), "병아리오락실-명예단골.png", $("dmNote")); });
